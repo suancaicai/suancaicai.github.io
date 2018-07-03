@@ -6,10 +6,10 @@ layout: default
   <div class="index-wrapper">
     <div class="aside">
       <div class="info-card">
-        <h1>BeiYuu</h1>
-        <a href="http://weibo.com/beiyuu/" target="_blank"><img src="http://www.weibo.com/favicon.ico" alt="" width="25"/></a>
-        <a href="http://www.douban.com/people/beiyuu/" target="_blank"><img src="http://www.douban.com/favicon.ico" alt="" width="22"/></a>
-        <a href="http://instagram.com/beiyuu/" target="_blank"><img src="http://d36xtkk24g8jdx.cloudfront.net/bluebar/00c6602/images/ico/favicon.ico" alt="" width="22"/></a>
+        <h1>Yu MingMing</h1>
+        <a href="https://weibo.com/u/5204028195?topnav=1&wvr=6&topsug=1&is_all=1" target="_blank"><img src="http://www.weibo.com/favicon.ico" alt="" width="25"/></a>
+        <a href="https://www.jianshu.com/u/8fae99b44ef0" target="_blank"><img src="http://www.jianshu.com/favicon.ico" alt="" width="22"/></a>
+         <a href="https://github.com/suancaicai" target="_blank"><img src="http://github.com/favicon.ico" alt="" width="22"/></a>
       </div>
       <div id="particles-js"></div>
     </div>
