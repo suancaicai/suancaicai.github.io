@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jekyll | yumingming</title>
+    <meta name="author" content="YuMingMing" />
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="YuMingMing's Blog" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+    <style>
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,
+big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+body {
+  font-family: Helvetica, Tahoma, Arial, 'Hiragino Sans GB', '\51AC\9752\9ED1\4F53', 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1', STXihei, '\534E\6587\7EC6\9ED1', SimSun, '\5B8B\4F53', Heiti, '\9ED1\4F53', sans-serif;
+  font-size: 16px;
+}
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+
+
+
+ol,ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,th,td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  display: block;
+  background-color: #red;
+}
+audio,canvas,video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]),[hidden] {
+  display: none;
+}
+
+
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+
+
+
+
+a {
+  color: #4a75b5;
+  text-decoration: none;
+  outline: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a.external {
+  padding-right: 13px;
+  background: url("/images/icons.gif") no-repeat right 1px;
+}
+a.external:hover {
+  background-position: right -15px;
+}
+.index-wrapper .aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  max-width: 500px;
+  background: #59a0b0;
+}
+@media screen and (max-width: 767px) {
+  .index-wrapper .aside {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    max-width: none;
+  }
+}
+
+
+
+/* info-card */
+.index-wrapper .info-card {
+  /* 一般是设置图片的位置用到，表示绝对位置，相对页面来说是固定死的。 */
+  position: absolute;
+  /* margin-top是相对position:releative */
+  margin-top: 10%;
+  text-align: center;
+  width: 100%;
+}
+
+/* 利用@media screen实现网页布局的自适应https://www.cnblogs.com/xcxc/p/4531846.html */
+@media screen and (max-width: 767px) {
+  .index-wrapper .info-card {
+    margin-top: 10px;
+  }
+}
+
+
+.index-wrapper .info-card h1 {
+  font-size: 40px;
+  color: #fff;
+  /* 元素的下外边距 */
+  margin-bottom: 20px;
+  /* 文字阴影 */
+  text-shadow: 0 0 80px rgba(255,255,255,0.5);
+  /* 文字间距 */
+  letter-spacing: 0.15em;
+  text-shadow: rgba(255,255,255,0.5) 0 0 15px, rgba(255,255,255,0.5) 0 0 10px;
+}
+
+
+.index-wrapper .info-card a {
+  margin: 0 15px;
+}
+
+
+/* header、header-inner */
+/* header {
+  display: block;
+  position: absolute;
+  margin-top: 10%;
+  text-align: center;
+  width: 100%;
+  background-color: #red;
+}
+.header-inner {
+  margin: 0 auto;
+  padding: 100px 0 70px;
+  width: 700px;
+}
+@media (min-width: 1600px) {
+  .container .header-inner {
+    width: 900px;
+  }
+}
+pre .header {
+  color: #b9ca4a;
+}
+
+.header {
+  background: transparent;
+}
+.header-inner {
+  position: relative;
+}
+
+.header-inner {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 240px;
+  background: #fff;
+  box-shadow: initial;
+  border-radius: initial;
+}
+@media (min-width: 1600px) {
+  .container .header-inner {
+    width: 240px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .header-inner {
+    position: relative;
+    width: auto;
+    border-radius: initial;
+  }
+}
+@media (max-width: 767px) {
+  .header-inner {
+    position: relative;
+    width: auto;
+    border-radius: initial;
+  }
+}
+
+
+*/
+
+
+
+
+
+.index-wrapper .index-content {
+  margin-left: 30%;
+  padding-top: 80px;
+  padding-right: 15%;
+
+}
+@media screen and (max-width: 767px) {
+  .index-wrapper .index-content {
+    margin-left: 0;
+    padding-right: 0;
+  }
+}
+.index-wrapper .artical-list {
+  width: 70%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  .index-wrapper .artical-list {
+    width: 85%;
+  }
+}
+.index-wrapper .artical-list li {
+  margin-bottom: 70px;
+}
+.index-wrapper .title {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 15px;
+  word-break: break-all;
+  font-weight: bold;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+  color: #444;
+}
+@media screen and (max-width: 767px) {
+  .index-wrapper .title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+.index-wrapper .title:hover {
+  color: #e50053;
+  text-decoration: none;
+}
+.index-wrapper .title-desc {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.body-post {
+  background: #f5f5f5;
+}
+@media screen and (max-width: 767px) {
+  .body-post {
+    background: #fff;
+  }
+}
+.post-wrapper {
+  width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 80px 60px;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper {
+    width: 85%;
+    margin: 100px auto 50px;
+    padding: 0;
+  }
+}
+.post-wrapper .post-title,
+.post-wrapper .post-title a {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #000;
+  text-align: center;
+  word-wrap: break-word;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper .post-title,
+  .post-wrapper .post-title a {
+    font-size: 24px;
+  }
+}
+.post-wrapper .post-title:hover,
+.post-wrapper .post-title a:hover {
+  text-decoration: none;
+}
+.post-wrapper .post-date {
+  text-align: center;
+  color: #999;
+  margin-bottom: 60px;
+  font-size: 14px;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper .post-date {
+    margin-bottom: 40px;
+  }
+}
+.post-wrapper h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+@media $mobiel {
+  .post-wrapper h2 {
+    font-size: 20px;
+  }
+}
+.post-wrapper h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #222;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper h3 {
+    font-size: 16px;
+  }
+}
+.post-wrapper h4,
+.post-wrapper h5,
+.post-wrapper h6 {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.post-wrapper p {
+  margin-bottom: 40px;
+  line-height: 1.8em;
+}
+.post-wrapper code {
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 0 5px;
+  font-family: "Courier";
+  line-height: 14px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+.post-wrapper pre {
+  background: #f7f3f7;
+  padding: 20px 30px 15px;
+  overflow: auto;
+  margin-bottom: 40px;
+  font-size: 14px;
+  border: 1px solid #eee;
+  color: #b9bdb6;
+  margin-top: -20px;
+}
+.post-wrapper pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  word-wrap: normal;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper pre code {
+    line-height: 1em;
+    font-size: 12px;
+  }
+}
+.post-wrapper h4+pre,
+.post-wrapper h3+pre {
+  margin-top: 20px;
+}
+.post-wrapper ul {
+  margin-bottom: 25px;
+  margin-left: 25px;
+}
+.post-wrapper ul li {
+  margin-bottom: 5px;
+  list-style: disc;
+  line-height: 1.8em;
+}
+.post-wrapper p + ul {
+  margin-top: -20px;
+}
+.post-wrapper ol {
+  margin-bottom: 25px;
+  margin-left: 25px;
+}
+.post-wrapper ol li {
+  margin-bottom: 5px;
+  list-style: decimal;
+  line-height: 1.1em;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper ol li {
+    margin-bottom: 0;
+    line-height: 1em;
+  }
+}
+.post-wrapper blockquote {
+  margin-left: 25px;
+  font-size: 14px;
+  font-style: italic;
+}
+.post-wrapper img {
+  max-width: 670px;
+  display: block;
+  margin: 10px auto;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper img {
+    max-width: 90%;
+  }
+}
+.post-wrapper table {
+  margin: 0 auto;
+}
+.about-wrapper {
+  background: #7e96a9;
+  width: 900px;
+  margin: 0 auto;
+  padding: 30px 60px;
+}
+@media screen and (max-width: 767px) {
+  .about-wrapper {
+    width: 100%;
+    padding: 0 7.5% 30px;
+  }
+}
+.about-wrapper .aboutme {
+  zoom: 1;
+}
+.about-wrapper .aboutme:before,
+.about-wrapper .aboutme:after {
+  content: "";
+  display: table;
+}
+.about-wrapper .aboutme:after {
+  clear: both;
+}
+.about-wrapper .aboutme h2 {
+  margin-bottom: 20px;
+}
+.about-wrapper .aboutme h2 a {
+  font-size: 18px;
+}
+.about-wrapper .aboutme li {
+  line-height: 1.4;
+  margin-bottom: 10px;
+  float: left;
+  width: 50%;
+}
+@media screen and (max-width: 767px) {
+  .about-wrapper .aboutme li {
+    float: none;
+    width: 80%;
+  }
+}
+.about-wrapper .aboutme a {
+  color: #fff;
+  font-size: 14px;
+}
+#particles-js {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: 20%;
+  -moz-background-size: 20%;
+  background-size: 20%;
+  background-position: 50% 50%;
+  background: #38658c;
+  background: -webkit-radial-gradient(top left, #5d3571, #38658c);
+  background: -moz-radial-gradient(top left, #5d3571, #38658c);
+  background: -o-radial-gradient(top left, #5d3571, #38658c);
+  background: -ms-radial-gradient(top left, #5d3571, #38658c);
+  background: radial-gradient(to bottom right, #5d3571, #38658c);
+}
+#disqus_container {
+  font-size: 12px;
+}
+#disqus_container .share-con {
+  float: right;
+  margin-bottom: 20px;
+}
+#disqus_container a.comment {
+  font-size: 14px;
+}
+.prettyprint {
+  background: #f7f3f7;
+  border: 0 !important;
+}
+.pln {
+  color: #1b181b;
+}
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #5a7b8c;
+}
+li.L0,li.L1,li.L2,li.L3,li.L4,li.L5,li.L6,li.L7,li.L8,li.L9 {
+  padding-left: 0.4em;
+  background-color: #f7f3f7;
+  list-style-type: decimal;
+}
+@media screen {
+  .str {
+    color: #918b3b;
+  }
+  .kwd {
+    color: #7b59c0;
+  }
+  .com {
+    color: #5a7b8c;
+  }
+  .typ {
+    color: #516aec;
+  }
+  .lit {
+    color: #a65926;
+  }
+  .pun {
+    color: #1b181b;
+  }
+  .opn {
+    color: #1b181b;
+  }
+  .clo {
+    color: #1b181b;
+  }
+  .tag {
+    color: #ca402b;
+  }
+  .atn {
+    color: #a65926;
+  }
+  .atv {
+    color: #159393;
+  }
+  .dec {
+    color: #a65926;
+  }
+  .var {
+    color: #ca402b;
+  }
+  .fun {
+    color: #516aec;
+  }
+}
+.wiki h2 {
+  cursor: pointer;
+}
+.wiki ul {
+  margin-left: 30px;
+  margin-bottom: 20px;
+  list-style: disc;
+}
+.wiki ul li {
+  margin-bottom: 5px;
+}
+.wiki ul ul {
+  list-style: circle;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+/* 分页 */
+/* .pagination {
+  margin: 120px 0 40px;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+.page-number-basic,
+.pagination .prev,
+.pagination .next,
+.pagination .page-number,
+.pagination .space {
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  margin: 0 10px;
+  padding: 0 11px;
+}
+@media (max-width: 767px) {
+  .page-number-basic,
+  .pagination .prev,
+  .pagination .next,
+  .pagination .page-number,
+  .pagination .space {
+    margin: 0 5px;
+  }
+}
+.pagination .prev,
+.pagination .next,
+.pagination .page-number {
+  border-bottom: 0;
+  border-top: 1px solid #eee;
+  transition-property: border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+}
+.pagination .prev:hover,
+.pagination .next:hover,
+.pagination .page-number:hover {
+  border-top-color: #222;
+}
+.pagination .space {
+  padding: 0;
+  margin: 0;
+}
+.pagination .prev {
+  margin-left: 0;
+}
+.pagination .next {
+  margin-right: 0;
+}
+.pagination .page-number.current {
+  color: #fff;
+  background: #ccc;
+  border-top-color: #ccc;
+}
+@media (max-width: 767px) {
+  .pagination {
+    border-top: none;
+  }
+  .pagination .prev,
+  .pagination .next,
+  .pagination .page-number {
+    margin-bottom: 10px;
+    border-top: 0;
+    border-bottom: 1px solid #eee;
+    padding: 0 10px;
+  }
+  .pagination .prev:hover,
+  .pagination .next:hover,
+  .pagination .page-number:hover {
+    border-bottom-color: #222;
+  }
+} */
+
+
+
+
+
+
+
+
+
+
+/* 返回顶部 */
+/* .back-to-top {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: -100px;
+  right: 30px;
+  z-index: 1050;
+  padding: 0 6px;
+  width: 24px;
+  background: #222;
+  font-size: 12px;
+  opacity: 0.6;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transform: translateZ(0);
+  transition-property: bottom;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .back-to-top {
+    display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  .back-to-top {
+    display: none !important;
+  }
+}
+.back-to-top.back-to-top-on {
+  bottom: 30px;
+} */
+
+ footer{
+  display: block;
+}
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 50px;
+}
+.footer-inner {
+  box-sizing: border-box;
+  margin: 20px auto;
+  width: 700px;
+}
+.footer {
+  font-size: 14px;
+  color: #999;
+}
+.footer img {
+  border: none;
+}
+.footer-inner {
+  text-align: center;
+}
+@media (min-width: 1600px) {
+  .container .footer-inner {
+    width: 900px;
+  }
+}
+.footer-inner {
+  width: 960px;
+  padding-left: 260px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .footer-inner {
+    width: auto;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .footer-inner {
+    width: auto;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+.footer-inner {
+  padding-left: 0;
+  padding-right: 260px;
+} */
+</style>
+  </head>
+
+  <body class="body-post">
+  <div class="post-wrapper">
+    <h1 class="post-title"><a href="/jekyll" title="jekyll">jekyll</a></h1>
+    <p class="post-date">2018-08-01</p>
+    <p>jekyll是一个简单的免费的Blog生成工具，类似WordPress。但是和WordPress又有很大的不同，原因是jekyll只是一个生成静态网页的工具，不需要数据库支持。但是可以配合第三方服务,例如Disqus。最关键的是jekyll可以免费部署在Github上，而且可以绑定自己的域名。</p>
+
+<h2 id="安装jekyll需要用到gem-ruby">安装jekyll需要用到gem 、ruby</h2>
+<p>查看是否存在查看版本：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&amp; gem -v
+2.5.2.3
+&amp; ruby -v
+ruby 2.3.7p456 (2018-03-28 revision 63024) [universal.x86_64-darwin17]
+</code></pre></div></div>
+
+<p>没有请自行安装。</p>
+
+<h3 id="正式开始">正式开始</h3>
+<p>1、首先下载jekyll：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem install jekyll
+  Fetching: public_suffix-3.0.2.gem (100%)
+  ERROR:  While executing gem ... (Gem::FilePermissionError)
+      You don't have write permissions for the /Library/Ruby/Gems/2.3.0 directory.
+</code></pre></div></div>
+
+<ul>
+  <li>报错：ERROR:  While executing gem … (Gem::FilePermissionError)You don’t have write permissions for the /Library/Ruby/Gems/2.3.0 directory.</li>
+  <li>
+    <p>原因： 这是因为要执行这些操作时必须有管理员的权限(比如更新软件),比如更新cocoapods时报错</p>
+
+    <p>soindy:SmartThermo soindy $ gem install cocoapods
+  Fetching: cocoapods-core-0.37.2.gem (100%)
+  ERROR:  While executing gem … (Gem::FilePermissionError)
+  You don’t have write permissions for the /Library/Ruby/Gems/2.0.0 directory.</p>
+  </li>
+  <li>
+    <p>解决方法： 只需要在命令前加上sudo,例如:sudo gem install cocoapods即可.sudo是获取管理员权限,现在按照步骤输入管理员密码即可.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo gem install jekyll
+  Password:
+  Fetching: public_suffix-3.0.2.gem (100%)
+  Successfully installed public_suffix-3.0.2
+  Fetching: addressable-2.5.2.gem (100%)
+  Successfully installed addressable-2.5.2
+  Fetching: colorator-1.1.0.gem (100%)
+  Successfully installed colorator-1.1.0
+  Fetching: http_parser.rb-0.6.0.gem (100%)
+  Building native extensions.  This could take a while...
+  Successfully installed http_parser.rb-0.6.0
+  Fetching: eventmachine-1.2.7.gem (100%)
+  Building native extensions.  This could take a while...
+  Successfully installed eventmachine-1.2.7
+  Fetching: em-websocket-0.5.1.gem (100%)
+  Successfully installed em-websocket-0.5.1
+  Fetching: rb-fsevent-0.10.3.gem (100%)
+  Successfully installed rb-fsevent-0.10.3
+  Fetching: ffi-1.9.25.gem (100%)
+  Building native extensions.  This could take a while...
+  Successfully installed ffi-1.9.25
+  Fetching: rb-inotify-0.9.10.gem (100%)
+  Successfully installed rb-inotify-0.9.10
+  Fetching: sass-listen-4.0.0.gem (100%)
+  Successfully installed sass-listen-4.0.0
+  Fetching: sass-3.5.6.gem (100%)
+  ERROR:  While executing gem ... (Gem::FilePermissionError)
+  You don't have write permissions for the /usr/bin directory.
+</code></pre></div>    </div>
+  </li>
+  <li>报错：  ERROR:  While executing gem … (Gem::FilePermissionError)  You don’t have write permissions for the /usr/bin directory.</li>
+  <li>原因：  /usr/bin受系统完整性保护的保护，任何人甚至root都无法写入。你需要授权 运行：</li>
+  <li>
+    <p>解决方法：</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo gem install -n /usr/local/bin sass
+   Password:
+   Successfully installed sass-3.5.6
+   Parsing documentation for sass-3.5.6
+   Installing ri documentation for sass-3.5.6
+   Done installing documentation for sass after 6 seconds
+   1 gem installed
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>2、创建文件夹</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ mkdir jekyllWorkspace
+</code></pre></div></div>
+
+<p>3、进入文件夹</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cd jekyllWorkspace
+</code></pre></div></div>
+
+<p>4、在当前路径下创建一个新的项目</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ jekyll new MM  (⚠️ MM是项目名称)
+     -bash: jekyll: command not found
+</code></pre></div></div>
+
+<ul>
+  <li>报错：-bash: jekyll: command not found</li>
+  <li>
+    <p>解决方法：</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo gem install -n /usr/local/bin jekyll
+$ jekyll new MM
+   Could not load Bundler. Bundle install skipped.
+   New jekyll site installed in /Users/z/Desktop/jekyllWorkspace/MM.
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>5、启动本地服务器</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ jekyll serve --watch （⚠️--watch可以省略）
+      Configuration file: none
+                  Source: /Users/z/Desktop/jekyllWorkspace
+             Destination: /Users/z/Desktop/jekyllWorkspace/_site
+               Incremental build: disabled. Enable with --incremental
+              Generating...
+         Auto-regeneration: enabled for '/Users/z/Desktop/jekyllWorkspace'
+            Server address: http://127.0.0.1:4000
+            Server running... press ctrl-c to stop.
+            Regenerating: 157 file(s) changed at 2018-08-01 16:36:27
+</code></pre></div></div>
+
+<ul>
+  <li>然后 浏览器 访问Server address: http://localhost:4000 即可看到刚刚 创建的</li>
+</ul>
+
+<p>查看进程.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ ps aux | grep jekyll
+    z    36741   0.0  0.0  4297064   4024 s000  S+    5:47下午   0:00.19 /Library/Ruby/Gems/2.3.0/gems/rb-fsevent-0.10.3/bin/fsevent_watch --format=otnetstring --latency 0.1 /Users/z/Desktop/jekyllWorkspace
+    z    36737   0.0  0.1  4347976   6296 s000  S+    5:47下午   0:01.29 /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby /usr/local/bin/jekyll serve --watch
+    z    37340   0.0  0.0  4267752    872 s004  S+    7:34下午   0:00.00 grep jekyll
+</code></pre></div></div>
+
+<p>杀死进程</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ kill -9 36741
+   $ kill -9 36737
+   $ kill -9 37340
+</code></pre></div></div>
+
+    <div id="disqus_container">
+  <div class="share-con">
+    <script type="text/javascript" charset="utf-8">
+      (function(){
+        var param = {
+          url: 'https://suancaicai.github.io//jekyll',
+          type: '6',
+          title: '《jekyll》' + '- jekyll是一个简单的免费的Blog生成工具，在Github上部署自己的博客吧',
+          ralateUid: '5204028195',//打开自己的微博主页查看 https://weibo.com/5204028195/profile?topnav=1&wvr=6&is_all=1
+          rnd:new Date().valueOf()
+        }
+        var temp = [];
+        for( var p in param ){
+          temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+        }
+        document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="86" height="16"></iframe>')
+      })()
+    </script>
+  </div>
+
+  <a href="#" class="comment" onclick="return false;">点击查看评论</a>
+  <div id="disqus_thread"></div>
+</div>
+
+  </div>
+
+  <div class="about-wrapper">
+
+  <!-- <iframe width="100%" height="75" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=75&fansRow=2&ptype=1&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=0&isFans=0&uid=1855270953&verifier=375b89d6&dpc=1" style="margin: 30px 0;"></iframe> -->
+
+  <!-- <div class="aboutme">
+    <h2><a href="/">所有文章</a></h2>
+    <ul>
+      
+      <li>
+        <a href="/jekyll" class="title">jekyll</a>
+      </li>
+      
+      <li>
+        <a href="/carriage-return-line-feed-new-line-end-file" class="title">回车、换行、和文件末尾空行</a>
+      </li>
+      
+      <li>
+        <a href="/github-pages" class="title">使用Github Pages建独立博客</a>
+      </li>
+      
+      <li>
+        <a href="/why-blog" class="title">我为什么写博客？</a>
+      </li>
+      
+    </ul>
+  </div> -->
+</div>
+
+
+  <script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+  <script src="/js/post.js" type="text/javascript"></script>
+</body>
+
+</html>
